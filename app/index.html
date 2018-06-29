@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Josefin+Slab|Poiret+One|Quicksand|Text+Me+One" rel="stylesheet">
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="temp/stylesheet.css">
+    <title>Git</title>
+</head>
+
+<body>
+    <h1>Workflows</h1>
+    <div class="topic">
+        <h2>Command</h2>
+        <ul>
+            <li>
+                <strong>cd</strong> change directory</li>
+            <li>
+                <strong>mkdir</strong> make directory</li>
+            <li>
+                <strong>pwd</strong> find out which directory you are at</li>
+            <li>
+                <strong>cd ..</strong> go to one directory on top</li>
+            <li>
+                <strong>ls</strong> or
+                <strong>ls -l</strong> list contents (-l) with more details</li>
+            <li>
+                <strong>touch 'file.extension'</strong> creates a file within a directory</li>
+        </ul>
+        <h3>Git Commands</h3>
+        <ul>
+            <li>
+                <strong>git init</strong> initialize git process</li>
+            <li>
+                <strong>git status</strong> check to see the status of files in a repo</li>
+            <li>
+                <strong>git commit -m 'reason for comiting'</strong>
+            </li>
+            <li>
+                <strong>git checkout -- .</strong>
+            </li>
+            <li>
+                <strong>git add --all</strong> add all files in a repo to be committed</li>
+            <li>
+                <strong>git remote add origin https://githib.com/location/file.git</strong> adding the location to where the file
+                has to be pushed into the server</li>
+            <li>
+                <strong>git commit -a -m 'comment'</strong> comminting the files</li>
+            <li>
+                <strong>git remote - v</strong> checking the location to push at the moment</li>
+            <li>
+                <strong>git push origin master</strong> pushing the files into the server</li>
+
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>Node JS</h2>
+        <ul>
+            <li>Open command terminal</li>
+            <li>insert
+                <strong>node file.js</strong>. This will open the node datafile with the code which we want to run
+                <br> Example from js code data:
+                <br> var whateverName = require('fs');
+                <br> var https = require('https');
+                <br> whateverName.writeFile(__dirname + "/index.html", "
+                <h2>Burpo ist Zungig</h2>", function(error){
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; if (error) {
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return console.log(error);
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; } else {
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return console.log("Congrats");
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; }
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; });
+                <br>
+                <br> var myPhotoLocation = 'https://raw.githubusercontent.com/LearnWebCode/welcome-to-git/master/images/dog.jpg'
+                https.get(myPhotoLocation, function(response){
+                <br> &nbsp;&nbsp;&nbsp;&nbsp; response.pipe(unicorn.createWriteStream(__dirname + "/mydog.jpg"));
+                <br> });
+                <br>
+            </li>
+
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>NPM</h2>
+        <p>You can use NPM as a 'shopping' for code packages.</p>
+        <p>You do it through the terminal. To install a jquery and a normalize.css package you need to insert the following
+            commands:
+        </p>
+        <ul>
+            <li>Navigate to the folder you want to work on and command
+                <strong>npm init</strong> to start npm. This will create a
+                <strong class="colorBlue">package.json file</strong> in the directory. In this file you can see all the dependencies. Its our 'grocery'
+                list where we keep track of all the extensions what we install through npm in our project.</li>
+            <li>
+                <strong>npm install jquery</strong> or replace jquery by any other package of choice. The installation will create
+                the 'node-modules' folder and inside it the 'jquery' one. This will only install the package, but to make
+                the installations organized and easy to be tracked, do it as follows:</li>
+            <li>
+                <strong>install jquery --save</strong>-- save will save the information that you installed jquery in your repo adding
+                this information to the
+                <strong class="colorBlue"> package.json</strong> file, under 'dependencies' (not the package-lock.json one). There you will also see
+                the version of the package(s) which was installed. This file will save all the information on all the packages
+                which were installed in a repo. After each installation, always add --save to keep this file up to date.
+            </li>
+            <li>Also, in case the packages have been deleted, you can also install everything again if you only have the package.json
+                file. For that, inside the repo type
+                <strong>npm install</strong>. That will install all directories with the packages files again, which were lost.</li>
+            <li>After installing all the needed packages, rememeber to push them to the server. Just make sure to add the package.json
+                file to the repo, add it to the staging area, commit it and push it to my github account.</li>
+            <li>if you want to check the version of the package which you have installed, just type
+                <strong>npm jquery -v</strong>. Or replace 'jquery' by the desired package</li>
+            <li>In order to know which package to install look in npm website or google the action a package should perform followed
+                by 'npm'</li>
+            <li>Together with jquery, when starting a project, install also the normalize package (equivalent to reset in css): <strong>npm install normalize.css --save</strong></li>
+            ´ </ul>
+    </div>
+    <div class="topic">
+        <h2>Gulp</h2>
+        <p>Gulp is an extension which helps saving a lot of time with coding :)</p>
+        <p>To work with Gulp you first want to make a global npm install:</p>
+        <p>~ npm install gulp-cli --global</p>
+        <p>This saved it on a more global. Now lets see all the steps to get it gulping! :D</p>
+        <ul>
+            <li>Navigate through the command line to the proper directory</li>
+            <li>
+                <strong>npm install gulp --save-dev</strong> to install gulp in our working directory. This will create a 'package-lock.json'
+                file which contains a 'dependencies' section and the 'devDependencies' section.</li>
+            <li>
+                <strong>gulp</strong> in the terminal to see the 'No gulpfile found' error. This is a proof that gulp was installed
+                (otherwise gulp command would not work here)</li>
+            <li>
+                <strong>touch 'gulpfile.js' </strong> Create a javascript file called 'gulpfile.js'</li>
+            <li>Fill in the file with content. Inserted
+                <em class="colorBlue">var gulp = require('gulp');</em> in my script. If i insert 'gulp' in the terminal again, I should see the
+                error 'Task default is not in your gulpfile'
+            </li>
+            <li>Fill in the gulpfile.js file adding the 'default' argument and a function which will run whatever you program
+                it to:
+                <br>gulp.task('default', function(){
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;console.log("you just created a gulp task")
+                <br> })
+            </li>
+            <li>
+                <strong>gulp-watch</strong>: our first gulp automation plugin.</li>
+            <li>
+                <strong>npm install gulp-watch --save-dev</strong>
+                <br> The
+                <span class="colorBlue">--save-dev</span> is used to save all the changes done to the repo</li>
+            <li>Add a gulp.task function to the
+                <strong>gulpfile.js</strong> file:
+                <br>
+                <img src="gulp-watch.png" alt="gulp-watch" class="screenshots">
+                <br>
+                <div class="errorCorner">
+                    <strong>Error Corner:</strong>
+                    <br>
+                    <!--IF future errors are documented, add a div here and create a style for the error corner :) -->
+                    When trying to install gulp-watch I had the following error:
+                    <br>
+                    <strong>npm ERR! Unexpected end of JSON input while parsing near '...^2.0.1","is-binary-pa'</strong>
+                    <br> I had a similar error once, and opened the error log file and saw a 304, then a 404 error - Bad DB internet!!
+                    <br> So, this was probably stored in the cache. So I cleaned the cache by using the command
+                    <strong>npm cache clear --force</strong>. Next time I can try npm cache clear (without force).
+                    <br> Next, I ran the npm install gulp-watch --save-dev and it worked!!!! :D
+                    <br> Read more on the error
+                    <a href="https://github.com/vuejs-templates/webpack/issues/990" target="_blank">here</a> or
+                    <a href="https://github.com/npm/npm/issues/19072" target="_blank"> here</a>
+                    </p>
+                </div>
+            </li>
+            <li>To start using the watch task, we can just go to the command line and type
+                <strong> gulp watch</strong>. When we do that, the watch function which is inside the 'gulp task' inside the gulpfile.js
+                will be executed.
+                <br>In the case of this example, we have the following code inside the gulp task:
+                <img src="gulp-watch-close.png" alt="close">
+                <br>
+            </li>
+            <li>Watch will keep running unless I stop it. To stop the watching, command
+                <strong> ctrl + c</strong>
+            </li>
+            <li>I can also creat another watch task, like a 'css' task so that gulp is watching changes done to css files. Here
+                is an example:
+                <br>
+                <img src="gulp-watch-css.png" alt="watch-css">
+            </li>
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>PostCSS and CSS Architecture</h2>
+        <ul>
+            <li>
+                <strong>PostCSS</strong> We can create a 'temp' or whichever folder to store the changes which we want to occurr
+                in the new css file which we want to work with. In order to create a new css file which will be our source
+                (directly bound with the index.html data, we can create the 'temp' directory.</li>
+            <li>Then, in the
+                <strong class="colorBlue">gulpfile.js</strong> file, create the gulp.task which will then channel the change from the source file (original
+                stylesheet) into the destination file (temporary filesheet).
+                <br> This is how the code looks like in the travel-site example:
+                <img src="channel-post-css.png" alt="channel-post-css">
+            </li>
+            <li>In order not to keep the one stylesheet too messed up, its a good practice to create other stylesheets. For instance,
+                in the 'travel-site' project, we insert an additional directory(modules) and inside of it another stylesheet.
+                <br> We will name the new stylesheet '_blabla.css'. The use of
+                <strong class="colorBlue">_</strong> normally signalizes to other developpers that this should be a transitional stylesheet. This is
+                a 'partial' file which wont be used in itself, but imported into another file.
+                <br> In order to do this we use the keyword
+                <strong class="colorBlue">@import</strong>. The @import is a native css code which we do not want the browser to directly load it.
+                Rather we want the code to go to the partial file and use the css which is there.
+                <br> This is an example of how this can be done in the main css file:
+                <br>
+                <img src="import-css-example.png" alt="">
+                <br>Note that @import has to be placed right at the beginning of the css file.</li>
+            <li>To make magic happens we will install postcss!</li>
+            <li>First install gulp-postcss
+                <strong>npm install gulp-postcss --save-dev</strong>
+            </li>
+            <li>Then install the import functionality with
+                <strong>npm install postcss-import --save-dev</strong>
+            </li>
+            <li>In the gulpfile.js add the following code (note that the cssImport should come first on the array):
+                <br>
+                <img src="import-css-gulpfile.png" alt="import-css-gulpfile">
+            </li>
+            <li>in order to normalize or to reset the css, I can use the
+                <strong>@import: "normalize.css" in the styles.css file:</strong>
+                <br>
+                <img src="normalize-css.png" alt="">
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>Summmary</h2>
+        <ol>
+            <li>Initiate git <strong>git init</strong></li>
+            <li>Optional (for started projects) - Check git status <strong>git status</strong></li>
+            <li>Add to git <strong>git add --all</strong></li>
+            <li>Commit the repo <strong>git commit 'comment as to why you are commiting'</strong></li>
+            <li>Go to your github account, find the place where you want your project to be pushed to (or create a new repo) and add the location in the command line     <strong>git remote add origin https://github.com/location/file.git</strong> </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+</body>
+
+</html>

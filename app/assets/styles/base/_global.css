@@ -1,0 +1,35 @@
+body {
+    font-family: Josefin Slab, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f3e7cc;
+}
+
+img {
+    max-width: 100%;
+}
+
+p,
+li {
+    font-size: 18px;
+    color: #310b4d;
+}
+
+h1 {
+    color: #237fc5;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #222;
+}
+
+h2,
+h3 {
+    font-size: 22px;
+    color: #310b4d;
+}
+
+h1 {
+    text-align: center;
+}
+
+a:visited {
+    color: inherit;
+}
