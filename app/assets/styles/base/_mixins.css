@@ -1,0 +1,6 @@
+@define-mixin at530 {
+    @media (min-width: 530px) {
+        @mixin-content;
+
+    }
+}

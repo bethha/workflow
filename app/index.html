@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Josefin+Slab|Poiret+One|Quicksand|Text+Me+One" rel="stylesheet">
 
     <!--stylesheets-->
-    <link rel="stylesheet" href="temp/stylesheet.css">
+    <link rel="stylesheet" href="temp/styles/styles.css">
     <title>Git</title>
 </head>
 
@@ -154,7 +154,7 @@
             <li>Add a gulp.task function to the
                 <strong>gulpfile.js</strong> file:
                 <br>
-                <img src="gulp-watch.png" alt="gulp-watch" class="screenshots">
+                <img src="assets/images/gulp-watch.png" alt="gulp-watch" class="screenshots">
                 <br>
                 <div class="errorCorner">
                     <strong>Error Corner:</strong>
@@ -176,8 +176,8 @@
             <li>To start using the watch task, we can just go to the command line and type
                 <strong> gulp watch</strong>. When we do that, the watch function which is inside the 'gulp task' inside the gulpfile.js
                 will be executed.
-                <br>In the case of this example, we have the following code inside the gulp task:
-                <img src="gulp-watch-close.png" alt="close">
+                <br>In the case of this example, we have the following code inside the gulp task: 
+                <img src="assets/images/gulp-watch-close.png" alt="close">
                 <br>
             </li>
             <li>Watch will keep running unless I stop it. To stop the watching, command
@@ -185,8 +185,8 @@
             </li>
             <li>I can also creat another watch task, like a 'css' task so that gulp is watching changes done to css files. Here
                 is an example:
-                <br>
-                <img src="gulp-watch-css.png" alt="watch-css">
+            <br>
+            <img src="assets/images/gulp-watch-css.png" alt="watch-css">
             </li>
         </ul>
     </div>
@@ -201,7 +201,7 @@
                 <strong class="colorBlue">gulpfile.js</strong> file, create the gulp.task which will then channel the change from the source file (original
                 stylesheet) into the destination file (temporary filesheet).
                 <br> This is how the code looks like in the travel-site example:
-                <img src="channel-post-css.png" alt="channel-post-css">
+                <img src="assets/images/channel-post-css.png" alt="channel-post-css">
             </li>
             <li>In order not to keep the one stylesheet too messed up, its a good practice to create other stylesheets. For instance,
                 in the 'travel-site' project, we insert an additional directory(modules) and inside of it another stylesheet.
@@ -213,7 +213,7 @@
                 Rather we want the code to go to the partial file and use the css which is there.
                 <br> This is an example of how this can be done in the main css file:
                 <br>
-                <img src="import-css-example.png" alt="">
+                <img src="assets/images/import-css-example.png" alt="">
                 <br>Note that @import has to be placed right at the beginning of the css file.</li>
             <li>To make magic happens we will install postcss!</li>
             <li>First install gulp-postcss
@@ -224,12 +224,12 @@
             </li>
             <li>In the gulpfile.js add the following code (note that the cssImport should come first on the array):
                 <br>
-                <img src="import-css-gulpfile.png" alt="import-css-gulpfile">
+                <img src="assets/images/import-css-gulpfile.png" alt="import-css-gulpfile">
             </li>
             <li>in order to normalize or to reset the css, I can use the
                 <strong>@import: "normalize.css" in the styles.css file:</strong>
                 <br>
-                <img src="normalize-css.png" alt="">
+                <img src="assets/images/normalize-css.png" alt="">
             </li>
             <li></li>
             <li></li>
@@ -239,21 +239,152 @@
         </ul>
     </div>
     <div class="topic">
-        <h2>Summmary</h2>
+        <h2>BEM</h2>
+        <ul>
+            <li>
+                <strong>BEM </strong>stands for
+                <strong> Block Element Modifier</strong>
+            </li>
+            <li>Avoid cascading, so elements can be used directly without confusion</li>
+            <li>CSS target at elements directly</li>
+            <li><strong>Tipp: </strong>translateY(y) - position an emlement vertically relative to itself. If for example, translateY(100)
+            is used, tha will push the content down 100% of the total height of the content. So if the content is 200px tall, then
+            it will be lowered 200px. If translateY(50) is used for a 200px height content, then the content will go 50% down, or
+            100px.</li>
+            <li><strong>Font size rem</strong>the browser looks at what is the font size defined for the main &lt;html&gt; element for that user's browser. Most browsers have a default of 16px for html, but users can change browser's settings individually. When, for instance 2rem is defined as font size of a class, the font size of this class is twice as big as the font-size of the overal html
+            element, which turns out as 32px for most browsers. But if some users configured their browsers to have a different font size, with rem, we respect the user's font size of their browser so that the proportions between the elements is the same although not all browsers of all users have a 16px font size. 
+            </li>
+            <li>when nesting css, we can use and to replace the main css class:
+                <br>
+                <img src="assets/images/nested-example.png" alt=""><br>
+                <img src="assets/images/nested-example-after-gulp.png" alt="">
+            </li>
+    </div>
+    <div class="topic">
+        <h2>Gulp Timeout</h2>
+            <li><strong>Browsersync</strong>The browsersync functionality allows that changes on the html data is being automatically updated. </li>
+            <li><strong>npm install browser-sync --save-dev</strong> to install the package</li>
+            <li>Then add the request in the gulpfile.js: <br>
+                <span class="colorBlue">browserSync = require('browser-sync').create();</span>            
+            </li>
+            <li>add the browserSync.init inside the watch task: <br>
+            <img src="assets/images/browser-sync.png" alt=""><br>
+            Here we add a server structure to run the automation:<br>
+            browserSync.init ({ <br>
+                server: { <br>
+                    baseDir: "app" <br>
+                } <br>
+            })</li>
+            <li>Replace the useless html task by the browserSync inside the watch for the html file (the index file) so that this file is automatically updated :D <br>
+            <img src="assets/images/browser-sync-html.png" alt="">
+            <br>The code as follows: <br>
+            ADD CODE
+            </li>
+            <li>This is <strong>AMAZING!!GEIL!</strong></li>
+            <li>Add a watch css functionality to it.</li>
+            <li>The functionality was named 'cssInject' but it could have been any other name: <br>
+            <img src="assets/images/browser-sync-cssInsert.png" alt=""></li>
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>Organizing your code</h2>
+        <ul>
+            <li>Separate the gulpfile.js into two different files.</li>
+            <li>Create a folder named gulp with another one inside, named tasks.</li>
+            <li>Inside tasks, create the files 'styles' and 'watch' (or whatever makes sense.</li>
+            <li>To make the tasks run, refer to them inside the gulfile.js
+            <img src="assets/images/gulpfile.png" alt="">
+            </li>
+            <div class="errorCorner">
+                <strong>Error Corner:</strong>
+                <br>In order to prevent gulp to always break when an error occur, inser a code on how to handle errors:<br>
+                <img src="assets/images/gulp-error.p" alt="">
+        </ul>    
+    </div>
+    
+    <div class="topic">
+        <h2>Mobile First</h2>
+        <ul>
+            <li>In order to get into mobile first, start with the smaller view</li>
+            <li><strong>npm install postcss-mixins --save-dev</strong> to install the mixin package </li>
+            <li>Add the mixin to the <strong>styles.js </strong> inside the gulp folder:
+            <img src="assets/images/styles-mixin.png" alt=""></li>
+            <li>Inside the main <strong>styles.css </strong>file inside the relevant directory (styles in this case), add the <strong>@import "base/_mixins"</strong>
+            <img src="assets/images/import-mixins.png" alt=""></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>Git Branches</h2>
+        <ul>
+            <li><strong>git branch</strong> shows the branches in the repo</li>
+            <li>create a new branch with each new feature of the project</li>
+            <li>clean project before creating new branch: check if there are no uncommited changes</li>
+            <li>Now add all files for being commited!<strong>git add folder/file.extension</strong> for individual file or <strong>git add -A</strong> If I only want to remove one file from the list, <strong>git reset folder/file.extension</strong></li>
+            <li>check status <strong>git status</strong></li>            
+            <li>commit <strong>git commit -m 'insert comment of what you did in the new commited files'</strong></li>
+            <li>Ig all worked fine, you sill see the 'nothingto commit' comment, as below:
+                <img src="assets/images/commit-branch.png" alt="">
+            </li>
+            <li>create a new branch <strong>git branch name-of-branch</strong>. Choose a name which make sense according to the changes done.</li>
+            <li>After these command lines go to the new branch: <strong>git checkout name-of-branch</strong></li>
+            <li>Make changes needed and then commit them: git commit -m 'add comment'</li>
+            <li>Switch back to the master branch <strong>git checkout master</strong> to see that here the changes of the other branch didnt occurr</li>
+            <li>After finished with the changes in the branch, to merge them, go to master branch and do: <strong>git merge name-of-branch</strong></li>
+            <li>Push master branch to github <strong>git push origin master</strong></li>
+            <li><strong>git commit -am</strong> Git add + git commit -m will just commit those files you've added (new and previously tracked), but git commit -am will commit all changes on tracked files, but it doesn't add new files.</li>
+            <li>Its also possible to merge a branch in github directly. For that, create the branch in github: <strong>git push origin name-of-branch</strong></li>
+            <li>Go to github, see your branch and assign it to yourself or a colleague. Once you did this, you can approve the merge in github. There will be two branches visible on your profile. After you accept the merge, the branch will be empty and you should delete the empty branch, as a best practice.</li>
+            <li>Go to the master branch <strong>git checkout master</strong> and pull the changes done in the master in github (the merging) into your local workspace, otherwise you wont see the new changes.</li>
+            <li>Check your braches and delete possible empty branches: <strong>git branch</strong> shows you how many branches you have</li>
+            <li>Delete empty branches: <strong>git branch -d name-of-branch</strong></li>
+            <li><strong>git checkout -b new-branch</strong> creates a new branch and goes directly to it</li>
+
+        </ul>
+    </div>
+    <div class="topic">
+        <h2>Summary</h2>
         <ol>
-            <li>Initiate git <strong>git init</strong></li>
-            <li>Optional (for started projects) - Check git status <strong>git status</strong></li>
-            <li>Add to git <strong>git add --all</strong></li>
-            <li>Commit the repo <strong>git commit 'comment as to why you are commiting'</strong></li>
-            <li>Go to your github account, find the place where you want your project to be pushed to (or create a new repo) and add the location in the command line     <strong>git remote add origin https://github.com/location/file.git</strong> </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><strong>Git</strong>
+                <ul>
+                    <li>Initiate git <strong>git init</strong></li>
+                    <li>Optional (for started projects) - Check git status <strong>git status</strong></li>
+                    <li>Add to git <strong>git add --all</strong></li>
+                    <li>Commit the repo <strong>git commit 'comment as to why you are commiting'</strong></li>
+                    <li>Go to your github account, find the place where you want your project to be pushed to (or create a new repo) and add the location in the command line     <strong>git remote add origin https://github.com/location/file.git</strong> </li>
+                </ul>
+            </li>
+            <br><li><strong>NPM Install Basics</strong>
+            <ul>
+                <li><strong>npm init</strong> to create the <strong>package.json file</strong>. Do it for all projects</li>
+                <li><strong>npm install jquery --save</strong></li>
+                <li><strong>CSS packages: </strong><br>
+                <strong>npm install normalize.css --save</strong><br>
+            </ul>
+            </li>
+            <br><li><strong>Gulp & PostCSS</strong></li>
+            <ul>
+                <li>Create automation with gulp and postcss packages</li>
+                <li>install PostCSS packages before running them into gulp watch tasks: <br>
+                    <strong>npm install gulp-autoprefixer --save.dev</strong><br>
+                    <strong>npm install postcss-simple-vars --save.dev</strong><br>
+                    <strong>npm install postcss-nested --save.dev</strong><br></li>
+                <li><strong>npm install gulp-vli --global</strong> installs gulp globally on computer</li>
+                <li><strong>npm install gulp --save-dev</strong> installs gulp on local repository</li>
+                <li>create a file with gulp document in root of repository: <strong>gulpfile.js</strong></li>
+                <li>add <strong>gulp-watch</strong> task in <strong>gulpfile.js</strong></li>
+                <li>set gulp-watch task to track information change in index.html file and also css files</li>
+                <li><strong>source (of the file which we want to track the changes to) > pipe (what should be done) > pipe (source of destination)</strong></li>
+                <li>an example of what the task constains: gulp.src('./app/assets/styles/styles.css')<br>.pipe(postcss([nested,cssvars,autoprefixer]))<br>.pipe(gulp.dest('./app/temp/styles/styles.css')</li>
+            </ul>
+            <br><li><strong>Gulp browser-sync</strong>
+            
+            </li>
+
         </ol>
     </div>
-
 </body>
-
 </html>

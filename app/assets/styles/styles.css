@@ -1,6 +1,8 @@
 
 @import "normalize.css";
-@import "_global.css";
+@import "base/_global.css";
+@import "base/_mixins";
+
 
 .topic {
     background-color: #e9e6e6;
