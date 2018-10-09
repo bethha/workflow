@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "jquery": "^3.3.1",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "package.json": "^2.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.24.5",
